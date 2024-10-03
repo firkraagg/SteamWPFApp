@@ -1,0 +1,39 @@
+﻿<Window x:Class="SteamExplorer.LogInWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SteamExplorer"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="Prihlásiť sa" Height="325" Width="265"
+        WindowStartupLocation="CenterOwner">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Image Source="Images/accountImage.png" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5,5,5,10"></Image>
+
+        <xctk:WatermarkTextBox Watermark="Zadaj svoj e-mail.." Name="EmailTextBox" Grid.Row="1" HorizontalContentAlignment="Center" 
+                               HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" 
+                               Width="150" Height="30" Padding="5" BorderThickness="2" Background="LightGray"
+                               BorderBrush="CornflowerBlue" TextChanged="EmailAndPasswordTextBoxes_OnTextChanged"></xctk:WatermarkTextBox>
+        <xctk:WatermarkTextBox Watermark="Zadaj svoje heslo.." Name="PasswordTextBox" Grid.Row="2" BorderThickness="2" 
+                               BorderBrush="CornflowerBlue" HorizontalContentAlignment="Center" HorizontalAlignment="Center" 
+                               VerticalAlignment="Center" Margin="5, 5, 5, 15" Width="150" Height="30" Padding="5"
+                               TextChanged="EmailAndPasswordTextBoxes_OnTextChanged" Background="LightGray">
+        </xctk:WatermarkTextBox>
+        <TextBlock Name="ErrorMessageTextBlock" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Red" Visibility="Collapsed"></TextBlock>
+        <Button Content="Prihlásiť sa" Name="LogInButton" Grid.Row="3" HorizontalAlignment="Center" 
+                VerticalAlignment="Center" Margin="5" Width="150" Height="30" Padding="5" 
+                Click="LogInButton_OnClick" Background="Green" BorderBrush="CornflowerBlue" BorderThickness="2" IsEnabled="{Binding AreButtonsEnabled}"></Button>
+        <Button Content="Registrovať sa" Name="RegisterButton" Grid.Row="4" HorizontalAlignment="Center" 
+                VerticalAlignment="Center" Margin="5" Width="150" Height="30" Padding="5" 
+                Click="RegisterButton_OnClick" Background="Crimson" BorderBrush="CornflowerBlue" BorderThickness="2" IsEnabled="{Binding AreButtonsEnabled}"></Button>
+    </Grid>
+</Window>

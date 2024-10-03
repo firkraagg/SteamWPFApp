@@ -1,0 +1,27 @@
+﻿<Window x:Class="SteamExplorer.OwnedGamesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SteamExplorer"
+        mc:Ignorable="d"
+        Title="Vlastnené hry" Height="450" Width="800"
+        WindowStartupLocation="CenterOwner">
+    <Grid>
+        <Border Margin="5">
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                <ListView Name="ListOfOwnedGames" ItemsSource="{Binding Games}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Title" DisplayMemberBinding="{Binding Title, UpdateSourceTrigger=PropertyChanged}" Width="250"></GridViewColumn>
+                            <GridViewColumn Header="Genre" DisplayMemberBinding="{Binding Genre}" Width="175"></GridViewColumn>
+                            <GridViewColumn Header="Price" DisplayMemberBinding="{Binding Price}" Width="100"></GridViewColumn>
+                            <GridViewColumn Header="Released" DisplayMemberBinding="{Binding Released}" Width="100"></GridViewColumn>
+                            <GridViewColumn Header="Metascore" DisplayMemberBinding="{Binding Metascore}" Width="100"></GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </ScrollViewer>
+        </Border>
+    </Grid>
+</Window>

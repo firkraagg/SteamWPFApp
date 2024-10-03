@@ -1,0 +1,92 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+	  <NoWarn>NU1701</NoWarn>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\about.png" />
+    <None Remove="Images\account.png" />
+    <None Remove="Images\accountImage.png" />
+    <None Remove="Images\accountSettings.png" />
+    <None Remove="Images\app.jpg" />
+    <None Remove="Images\application.png" />
+    <None Remove="Images\author.png" />
+    <None Remove="Images\close.png" />
+    <None Remove="Images\creator.jpg" />
+    <None Remove="Images\creator.png" />
+    <None Remove="Images\games.png" />
+    <None Remove="Images\icon.ico" />
+    <None Remove="Images\icon.png" />
+    <None Remove="Images\logout.png" />
+    <None Remove="Images\openFolder.png" />
+    <None Remove="Images\person.png" />
+    <None Remove="Images\settings.gif" />
+    <None Remove="Images\settings.png" />
+    <None Remove="Images\steam_splash_screen.jpg" />
+    <None Remove="Images\wallet.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Extended.Wpf.Toolkit" Version="4.6.0" />
+    <PackageReference Include="Microsoft.TeamFoundationServer.ExtendedClient" Version="19.225.1" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SteamWPF\GamesLibrary.csproj" />
+    <ProjectReference Include="..\UsersLibrary\UsersLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\about.png" />
+    <Resource Include="Images\account.png" />
+    <Resource Include="Images\accountImage.png" />
+    <Resource Include="Images\accountSettings.png" />
+    <Resource Include="Images\app.jpg" />
+    <Resource Include="Images\application.png" />
+    <Resource Include="Images\author.png" />
+    <Resource Include="Images\close.png" />
+    <Resource Include="Images\creator.jpg" />
+    <Resource Include="Images\creator.png" />
+    <Resource Include="Images\games.png" />
+    <Resource Include="Images\icon.ico" />
+    <Resource Include="Images\icon.png" />
+    <Resource Include="Images\logout.png" />
+    <Resource Include="Images\openFolder.png">
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\settings.png">
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\wallet.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <SplashScreen Include="Images\steam_splash_screen.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="accounts.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+</Project>

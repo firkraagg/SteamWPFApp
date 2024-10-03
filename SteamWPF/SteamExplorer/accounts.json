@@ -1,0 +1,10 @@
+[
+   {
+      "name":"Janko",
+      "surname":"Hruska",
+      "email":"jankohruska@example.sk",
+      "password":"123456789",
+      "phoneNumber":"0948742254",
+      "wallet":"12.0"
+   }
+]
